@@ -2,7 +2,6 @@
 
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 
 // Importação das rotas
 import pokemonRoutes from "./routes/pokemonRoutes.js";
@@ -12,8 +11,6 @@ import favoritesRoutes from "./routes/favorites.js"; // Rotas de favoritos
 // Importação do middleware de tratamento de erros
 import { errorHandler } from "./middlewares/errorHandler.js";
 
-// Carrega variáveis de ambiente do arquivo .env
-dotenv.config();
 
 // ============================
 // Inicialização do Express
