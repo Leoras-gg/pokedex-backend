@@ -1,7 +1,7 @@
 // src/app.js
 
-import express from "express";
 import cors from "cors";
+import express from "express";
 
 // Importação das rotas
 import pokemonRoutes from "./routes/pokemonRoutes.js";
@@ -25,13 +25,21 @@ const app = express();
 // Permite que frontends em domínios diferentes acessem a API
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://pokedex-fullstack-eta.vercel.app/"
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "https://pokedex-fullstack-eta.vercel.app"
+    ];
+
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 
 // Permite que o Express interprete JSON no body das requisições
