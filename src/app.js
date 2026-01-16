@@ -27,7 +27,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://SEU-FRONTEND.vercel.app"
+    "https://pokedex-fullstack-eta.vercel.app/"
   ],
   credentials: true
 }));
