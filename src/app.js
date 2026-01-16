@@ -26,7 +26,6 @@ const app = express();
 
 // Habilita CORS (Cross-Origin Resource Sharing)
 // Permite que frontends em domínios diferentes acessem a API
-import cors from "cors";
 
 app.use(cors({
   origin: [
