@@ -30,8 +30,9 @@ app.use(cors({
     "https://pokedex-fullstack-eta.vercel.app/"
   ],
   credentials: true
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
 
 // Permite que o Express interprete JSON no body das requisições
 app.use(express.json());
