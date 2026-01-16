@@ -26,7 +26,16 @@ const app = express();
 
 // Habilita CORS (Cross-Origin Resource Sharing)
 // Permite que frontends em domínios diferentes acessem a API
-app.use(cors());
+import cors from "cors";
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://SEU-FRONTEND.vercel.app"
+  ],
+  credentials: true
+}));
+
 
 // Permite que o Express interprete JSON no body das requisições
 app.use(express.json());
