@@ -29,7 +29,7 @@ app.use(cors({
     "http://localhost:5173",
     "https://pokedex-fullstack-eta.vercel.app/"
   ],
-  credentials: true
+  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
